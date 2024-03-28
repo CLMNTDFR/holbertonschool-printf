@@ -1,30 +1,34 @@
 #include "main.h"
 
 /**
-* get_function - find the function corresponding to the specifier
-* @letter: pointer contain letter associate to function
-*
-* Return: NULL
-*/
-int (*get_function(char *letter))(va_list)
+ * get_function - find the appropriate print function for the specifier
+ * @specifier: the conversion specifier to find the handler for
+ * @arguments: the va_list containing the arguments
+ * Return: the number of characters printed by the handler function (2)
+ */
+int get_function(const char specifier, va_list arguments)
 {
-	specifier_struct function_pointer[] = {
-		{"c", _printchar},
-		{"i", },
-		{"d", },
-		{"s", },
-		{"%", _printpercent},
-		{NULL, NULL}
+	format_handler array[] = {
+	    {'c', _printchar},
+		{'%', _printpercent},
+		{'s', _printstring},
+		{'d', _printinteger},
+		{'i', _printinteger},
+		{'\0', NULL}
 	};
 	int index = 0;
 
-	while (function_pointer[index].specifier != NULL)
+		while (array[index].specifier != '\0')
 	{
-		if (function_pointer[index].specifier[0] == letter[0])
+		if (specifier == array[index].specifier)
 		{
-			return (function_pointer[index].function);
+			return (array[index].function(arguments));
 		}
+
 		index++;
 	}
-	return (NULL);
+	_putchar('%');
+	_putchar(specifier);
+
+	return (2);
 }
