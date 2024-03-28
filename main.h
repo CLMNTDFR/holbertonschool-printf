@@ -5,8 +5,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
+
+int get_function(const char specifier, va_list arguments);
 
 int _putchar(char c);
 
@@ -16,16 +19,18 @@ int _printpercent(va_list args);
 
 int _printstring(va_list args);
 
+int _printinteger(va_list args);
+
 /**
- * struct specifier_struct - structure to handle format specifiers
- * and run corresponding functions
+ * struct format_handler_structure - structure to handle format specifiers
+ * and corresponding functions
  * @specifier: the format specifier character
  * @function: a function pointer to the corresponding data processing function
  */
-struct specifier_struct
+typedef struct format_handler_structure
 {
-	char *specifier;
+	char specifier;
 	int (*function)(va_list);
-};
+} format_handler;
 
 #endif
