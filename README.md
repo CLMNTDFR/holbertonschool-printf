@@ -2,11 +2,11 @@
 
 *The function _printf aims to recreate the printf function from the standard C library. This function analyzes the format string and processes each conversion specifier by calling the appropriate function, aiming to print the corresponding data type. This process operates with the help of a custom _putchar function created for this purpose.*
 
-## ⌨️ Prototype ⌨️
+## ⌨️ Prototype
   
 `int _printf(const char *format, ...);`
 
-## 🔑 Requirements 🔑
+## 🔑 Requirements
   
 - Allowed editors: vim or emacs.
 - All the files will be compiled on Ubuntu 20.04 LTS using gcc.
@@ -16,11 +16,11 @@
 - The prototypes of all the functions should be included in the header file called main.h.
 - The header files should be include guarded.
 
-## ⚙️ Compilation ⚙️
+## ⚙️ Compilation 
   
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
 
-## ✅Available specifiers✅
+## ✅Available specifiers
   
 
 | Specifier | Description |
@@ -31,12 +31,20 @@
 | %i    | print a number    |
 | %%    | print "%"    |
 
-## 🛠️ Tech Stack 🛠️
+## 📈Flowchart
+
+![](https://i.ibb.co/qxYcFDD/flowchart-printf.png)
+
+## 📄MAN PAGE
+
+![](https://i.ibb.co/mN9zgkd/man-3-printf.png)
+
+## 🛠️ Tech Stack 
 - C language
 - [Readmi](https://readmi.xyz//)
 - [Diagrams](https://app.diagrams.net/)
 
-## 🧙🏿‍♂️ Authors 🧙‍♂️
+## 🧙🏿‍♂️🧙‍♂️ Authors 
 #### Clément DEFER
 - Github: [@CLMNTDFR](https://github.com/CLMNTDFR)
 
