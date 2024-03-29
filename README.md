@@ -35,6 +35,10 @@
 
 ![](https://i.postimg.cc/syNmGcff/printf-2-1.png)
 
+## 📈UML
+
+![](https://i.postimg.cc/8TZF4p3D/uml-diagram.png)
+
 ## 📄MAN PAGE
 
 ![](https://i.ibb.co/mN9zgkd/man-3-printf.png)
