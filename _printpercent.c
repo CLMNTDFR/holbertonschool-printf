@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _printpercent - prints a percent character
+* _printpercent - prints  percent character
 * @args: list of arguments from variadic function printf
 * Return: int (1, length of the % char)
 */
