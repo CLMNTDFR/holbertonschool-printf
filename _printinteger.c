@@ -1,58 +1,39 @@
 #include "main.h"
-
 /**
- * _putnumbers - recursive function that print an int
- * @number: number
-*/
-
-void _putnumbers(int number)
-{
-	/*changer into positive number*/
-	if (number < 0)
-	{
-		_putchar('-');
-		number = -number;
-	}
-
-	/*recursive function remove last digit of number*/
-	if (number / 10)
-		_putnumbers(number / 10);
-
-	/*print last digit*/
-	_putchar(number % 10 + '0');
-}
-
-/**
- * _counternumber - counter function
- * @number: number
- * Return: length of the number
+ * _printinteger - print a number (integer) to the standard output.
+ * @args: a va_list containing the integer to be printed.
+ * Return: the number of characters printed.
  */
-
-int _counternumber(int number)
+int _printinteger(va_list args)
 {
-	int counter = 0;
+    long int number = va_arg(args, int);
+    long int absolute_number = 0;
+    long int temp_number = absolute_number;
+    long int digit_position = 1;
+    int lenght = 0;
 
-	if (number == 0)
-		return (1);
+    if (number < 0)
+    {
+        absolute_number = (number * -1);
+        _putchar('-');
+        lenght++;
+    }
+    else
+    {
+        absolute_number = number;
+    }
+    temp_number = absolute_number;
+    while (temp_number > 9)
+    {
+        temp_number = temp_number / 10;
+        digit_position = digit_position * 10;
+    }
+    while (digit_position >= 1)
+    {
+        _putchar(((absolute_number / digit_position) % 10) + '0');
+        digit_position = digit_position / 10;
 
-	while (number != 0)
-	{
-		number = number / 10;
-		counter++;
-	}
-	return (counter);
-}
-
-/**
- * _printnumbers - function that print numbers
- * @ListArguments: list of variadic arguments
- * Return: length of the number
-*/
-
-int _printnumbers(va_list ListArguments)
-{
-	int number = va_arg(ListArguments, int);
-
-	_putnumbers(number);
-	return (_counternumber(number));
+        lenght++;
+    }
+    return (lenght);
 }
