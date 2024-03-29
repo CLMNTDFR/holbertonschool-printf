@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _printchar - prints  character
+* _printchar - prints  a character
 * @args: list of arguments from variadic function printf
 * Return: int (1, length of the printed character)
 */
